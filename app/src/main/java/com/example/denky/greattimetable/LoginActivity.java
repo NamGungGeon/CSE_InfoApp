@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by denky on 2017-03-16.
+ */
+
 public class LoginActivity extends AppCompatActivity {
     Button enter_btn;
     @Override

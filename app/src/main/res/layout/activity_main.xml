@@ -9,33 +9,78 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
 
+    android:layout_marginBottom="5dp"
+    android:gravity="center"
+    >
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/profile"
+        android:layout_marginLeft="10dp"
+        />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="최강컴공"
-        android:textSize = "30dp"
+        android:text="건국대학교 컴퓨터공학과"
+        android:textSize = "23dp"
         android:textAlignment="center"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
 
         />
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
 
-    <TextView
+        android:background="@drawable/search"
+        android:layout_marginRight="10dp"
+        />
+
+</LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="미래를 선두해 나가는 최강 컴퓨터학도들의 공간, 컴공입니다."
-        android:textAlignment="center"
-        android:layout_marginBottom="10dp"
-        android:textSize = "20dp"
-
-        />
+        android:layout_gravity="center"
+        >
+<Button
+    android:layout_width="80dp"
+    android:layout_height="40dp"
+    android:text="공모전"
+    android:textSize="20dp"
+    android:background="#FFFFFF"
+    android:textColor="@color/black_gray"
+    />
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="커뮤니티"
+            android:textSize="20dp"
+            android:background="#FFFFFF"
+            android:textColor="@color/black_gray"
+            />
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="팀모집"
+            android:textSize="20dp"
+            android:background="#FFFFFF"
+            android:textColor="@color/black_gray"
+            />
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="추천 사이트"
+            android:textSize="20dp"
+            android:background="#FFFFFF"
+            android:textColor="@color/black_gray"
+            />
+    </LinearLayout>
 </LinearLayout>
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="bunyangfocus.bunyangfocus.MainActivity"
-        tools:showIn="@layout/activity_main"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fillViewport="true"
@@ -67,27 +112,55 @@
 
                     android:textSize="20dip"/>
 
-                <ViewFlipper
-                    android:id="@+id/flipper"
-                    android:layout_width="fill_parent"
-                    android:layout_height="280dp"
-                    android:flipInterval="5000"
-                    android:focusableInTouchMode="true">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <ListView
-                        android:id="@+id/flipper_list_01"
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent"/>
-                    <ListView
-                        android:id="@+id/flipper_list_02"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"/>
-                    <ListView
-                        android:id="@+id/flipper_list_03"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"/>
+                </android.support.v4.view.ViewPager>
 
-                </ViewFlipper>
+                <!--
+                                <ViewFlipper
+                                    android:id="@+id/flipper"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="280dp"
+                                    android:flipInterval="5000"
+                                    android:focusableInTouchMode="true">
+
+                                    <ImageView
+                                        android:id="@+id/img01"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/poster1"/>
+
+                                    <ImageView
+                                        android:id="@+id/img02"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/poster2"/>
+
+                                    <ImageView
+                                        android:id="@+id/img03"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/poster3"/>
+
+
+                                    <ListView
+                                        android:id="@+id/flipper_list_01"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="match_parent"/>
+                                    <ListView
+                                        android:id="@+id/flipper_list_02"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"/>
+                                    <ListView
+                                        android:id="@+id/flipper_list_03"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                </ViewFlipper>
+                    -->
             </LinearLayout>
 
             <LinearLayout

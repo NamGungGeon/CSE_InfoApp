@@ -29,7 +29,7 @@
                     android:id="@+id/interest_textview"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/title_temp"
+                    android:background="@drawable/title_t"
                     android:gravity="center_vertical"
                     android:textColor="#ffffff"
                     android:text="내 관심상품"
