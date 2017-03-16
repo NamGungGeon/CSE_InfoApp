@@ -1,5 +1,6 @@
 package com.example.denky.greattimetable;
 
+import android.graphics.Bitmap;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,12 @@ import android.widget.ImageView;
 public class CustomAdapter extends PagerAdapter {
 
     LayoutInflater inflater;
+    Bitmap[] bitmap;
 
     public CustomAdapter(LayoutInflater inflater) {
         // TODO Auto-generated constructor stub
         this.inflater=inflater;
+
     }
 
     //PagerAdapter가 가지고 잇는 View의 개수를 리턴
@@ -25,6 +28,12 @@ public class CustomAdapter extends PagerAdapter {
     public int getCount() {
         // TODO Auto-generated method stub
         return 3;
+    }
+    public void getImg(int n, Bitmap[] b) {
+        bitmap = new Bitmap[n];
+        for (int i  = 0 ; i < n; i++){
+            bitmap[i] = b[i];
+        }
     }
 
     //ViewPager가 현재 보여질 Item(View객체)를 생성할 필요가 있는 때 자동으로 호출
