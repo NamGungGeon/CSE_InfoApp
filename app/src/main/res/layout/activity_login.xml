@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="vertical"
-        android:background="#F4F4F4"
+        android:background="@color/colorPrimary"
         >
         <ImageView
             android:layout_width="100dp"
@@ -44,12 +44,43 @@
             android:text="최강 컴공들의 모임에 오신 것을 환영합니다."
             android:layout_gravity="center"
             />
+        <EditText
+            android:layout_width = "280dp"
+            android:layout_height = "wrap_content"
+            android:hint="아이디"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor = "#000000"
+            android:textColorHint="#A9A9A9"
+            android:id="@+id/idText"
+            android:drawableStart="@drawable/profile"
+            android:drawableLeft="@drawable/profile"
+            android:drawablePadding="10dp"
+            android:background="@color/colorPrimary"
+            />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width = "280dp"
+            android:layout_height = "wrap_content"
+            android:hint="패스워드"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor = "#000000"
+            android:textColorHint="#A9A9A9"
+            android:id="@+id/passwordText"
+            android:drawableStart="@drawable/pass"
+            android:drawableLeft="@drawable/pass"
+            android:background="@color/colorPrimary"
+            android:drawablePadding="10dp"
+            />
         <Button
             android:id="@+id/enter_btn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="눌러줘! 하응"
+            android:layout_marginTop="60dp"
+            android:text="들어와줘! 하응"
             android:layout_gravity="center"
             />
     </LinearLayout>
