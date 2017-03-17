@@ -235,7 +235,7 @@
                     android:textColor="#ffffff"
                     android:textStyle="normal"
                     android:textSize="20dp"
-                    android:text=" 팀원구합니다!"
+                    android:text=" 중고장터"
                     />
 
                 <ListView
@@ -266,7 +266,7 @@
                     android:textColor="#ffffff"
                     android:textStyle="normal"
                     android:textSize="20dp"
-                    android:text=" 팀원구합니다!"
+                    android:text=" 추천 사이트"
                     />
 
                 <ListView
@@ -276,7 +276,15 @@
                     android:fillViewport="true"
                     >
                 </ListView>
-
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Computer Systems Engineering"
+                    android:textSize="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="center"
+                    />
             </LinearLayout>
 
 

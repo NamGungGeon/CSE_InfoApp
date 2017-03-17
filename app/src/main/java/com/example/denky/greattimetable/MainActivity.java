@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.ScrollView;
 
 /**
- * Created by denky on 2017-03-05.
+ * Created by denky on 2017-03-15.
  */
 
 
@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         Listview category1_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
         Listview category1_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
         Listview category1_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+
+
 
         category1_data.add(category1_l1);
         category1_data.add(category1_l2);
