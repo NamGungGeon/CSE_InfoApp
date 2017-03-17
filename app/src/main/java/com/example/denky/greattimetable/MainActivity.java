@@ -7,6 +7,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by denky on 2017-03-05.
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Img = new Bitmap[maxScroll];
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView listview = (ListView)findViewById(R.id.second_listview);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
         /******************포스터 Bitmap 가공******************
@@ -50,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         adapter.getImg(maxScroll, Img); // 가공된 비트맵 전달
         /******************포스터 Bitmap 가공******************/
         //ViewPager에 Adapter 설정
+
+        ArrayList<Listview> data=new ArrayList<>();
+        Listview lion=new Listview("김아무개","클릭하세용", " 안녕하세요.");
+        data.add(lion);
+        ListviewAdapter adapter2=new ListviewAdapter(this,R.layout.list_item,data);
+        listview.setAdapter(adapter2);
+
+
         pager.setAdapter(adapter);
         handler = new Handler() {
 
