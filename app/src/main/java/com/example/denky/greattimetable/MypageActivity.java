@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 
@@ -12,6 +13,9 @@ import android.widget.TextView;
  */
 
 public class MypageActivity extends AppCompatActivity {
+    //Push alarm permission, init value is false.
+    static boolean isOkPushAlarm=false;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_mypage);
@@ -25,5 +29,15 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void clickedBackBtn(View v){
+        finish();
+    }
+
+    public void clickedPermissionPushAlarmCb(View v){
+        CheckBox cb=(CheckBox)findViewById(R.id.permissonPushAlarm);
+        isOkPushAlarm=cb.isChecked();
+    }
+
 
 }

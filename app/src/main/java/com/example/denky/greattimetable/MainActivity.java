@@ -2,6 +2,7 @@ package com.example.denky.greattimetable;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -98,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickedHomepage(View v){
+        Intent openHomepage=new Intent(Intent.ACTION_VIEW, Uri.parse("http://cse.konkuk.ac.kr"));
+        startActivity(openHomepage);
     }
 
 

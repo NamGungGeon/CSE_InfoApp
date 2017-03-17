@@ -110,7 +110,7 @@
                     android:shadowDy="0"
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
-                    android:text=" First category"
+                    android:text=" 공모전 정보"
 
                     android:textSize="20dip"/>
 
@@ -185,7 +185,7 @@
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
                     android:textSize="20dip"
-                    android:text=" Second category"
+                    android:text=" 장학금 정보"
                     />
 
                 <ListView
