@@ -1,16 +1,20 @@
 package com.example.denky.greattimetable;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+=======
+import android.view.View;
+>>>>>>> 49f7e629154358fa9e6fe1b40c7a35fb098428be
 
 /**
  * Created by denky on 2017-03-05.
@@ -101,4 +105,16 @@ public class MainActivity extends AppCompatActivity {
         };
         thread.start();
     }
+
+
+    //All Listener Methods are not defined perfectly yet.
+    public void clickedMypageBtn(View v){
+        Intent openMypage=new Intent(getApplicationContext(),MypageActivity.class);
+        startActivity(openMypage);
+    }
+
+    public void clickedHomepage(View v){
+    }
+
+
 }
