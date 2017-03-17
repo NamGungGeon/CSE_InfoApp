@@ -1,7 +1,6 @@
 package com.example.denky.greattimetable;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,8 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import java.util.ArrayList;
-import java.util.List;
+
 import android.view.View;
+import android.widget.ScrollView;
 
 /**
  * Created by denky on 2017-03-05.
@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
     */
 
     protected void onCreate(Bundle savedInstanceState) {
-        Bitmap[] Img ;
-        Img = new Bitmap[maxScroll];
+       // ScrollView main_scrollview = (ScrollView) findViewById(R.id.main_scrollView);//스크롤뷰 선언
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listview = (ListView)findViewById(R.id.second_listview);
+        ListView listview = (ListView)findViewById(R.id.first_listview);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
+
         /******************포스터 Bitmap 가공******************
         for (int i = 0; i < maxScroll; i++) {
             Img[i] = BitmapFactory.decodeResource(getResources(), R.drawable.poster1 + i);
@@ -56,17 +56,72 @@ public class MainActivity extends AppCompatActivity {
         adapter.getImg(maxScroll, Img); // 가공된 비트맵 전달
         /******************포스터 Bitmap 가공******************/
         //ViewPager에 Adapter 설정
+        //카테고리 소스 : 1
+        ArrayList<Listview> category1_data=new ArrayList<>();
+        Listview category1_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview category1_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview category1_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
 
-        ArrayList<Listview> data=new ArrayList<>();
-        Listview l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
-        Listview l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
-        Listview l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+        category1_data.add(category1_l1);
+        category1_data.add(category1_l2);
+        category1_data.add(category1_l3);
+        ListviewAdapter category1_adapter=new ListviewAdapter(this,R.layout.list_item,category1_data);
+        listview.setAdapter(category1_adapter);
+        //카테고리 소스 : 1
 
-        data.add(l1);
-        data.add(l2);
-        data.add(l3);
-        ListviewAdapter adapter2=new ListviewAdapter(this,R.layout.list_item,data);
-        listview.setAdapter(adapter2);
+        //카테고리 소스 : 2
+        ArrayList<Listview> category2_data=new ArrayList<>();
+        Listview category2_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview category2_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview category2_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+        category2_data.add(category2_l1);
+        category2_data.add(category2_l2);
+        category2_data.add(category2_l3);
+        ListviewAdapter category2_adapter=new ListviewAdapter(this,R.layout.list_item,category2_data);
+        listview.setAdapter(category2_adapter);
+        //카테고리 소스 : 2
+/*
+        //카테고리 소스 : 3
+        ArrayList<Listview> category3_data=new ArrayList<>();
+        Listview category3_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview category3_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview category3_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+        category3_data.add(category3_l1);
+        category3_data.add(category3_l2);
+        category3_data.add(category3_l3);
+        ListviewAdapter category3_adapter=new ListviewAdapter(this,R.layout.list_item,category3_data);
+        listview.setAdapter(category3_adapter);
+        //카테고리 소스 : 3
+
+        //카테고리 소스 : 4
+        ArrayList<Listview> category4_data=new ArrayList<>();
+        Listview category4_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview category4_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview category4_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+        category1_data.add(category4_l1);
+        category1_data.add(category4_l2);
+        category1_data.add(category4_l3);
+        ListviewAdapter category4_adapter=new ListviewAdapter(this,R.layout.list_item,category4_data);
+        listview.setAdapter(category4_adapter);
+        //카테고리 소스 : 4
+        //카테고리 소스 : 5
+        ArrayList<Listview> category5_data=new ArrayList<>();
+        Listview category5_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview category5_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview category5_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+        category1_data.add(category5_l1);
+        category1_data.add(category5_l2);
+        category1_data.add(category5_l3);
+        ListviewAdapter category5_adapter=new ListviewAdapter(this,R.layout.list_item,category5_data);
+        listview.setAdapter(category5_adapter);
+        //카테고리 소스 : 5
+
+*/
+
 
         pager.setAdapter(adapter);
         handler = new Handler() {
@@ -118,6 +173,17 @@ public class MainActivity extends AppCompatActivity {
         Intent openHomepage=new Intent(Intent.ACTION_VIEW, Uri.parse("http://cse.konkuk.ac.kr"));
         startActivity(openHomepage);
     }
+    public void scrollToEnd(final ScrollView sv){ // 스크롤업업
+       sv.post(new Runnable() {
+            @Override
+            public void run() {
+                sv.fullScroll(View.FOCUS_UP);
+            }
+
+        });
+
+    }
+
 
 
 }

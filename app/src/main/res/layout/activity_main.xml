@@ -87,11 +87,13 @@
         android:layout_height="fill_parent"
         android:fillViewport="true"
         android:id="@+id/main_scrollView"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        >
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            >
 
             <LinearLayout
                 android:id="@+id/flipper_layout"
@@ -119,20 +121,49 @@
                     android:layout_height="match_parent">
 
                 </android.support.v4.view.ViewPager>
+        <!-- 여기부터 second category to 5th category-->
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/first_layout"
+                android:layout_width="match_parent"
+                android:layout_height="152dp"
+                android:layout_below="@+id/flipper_layout"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/title_t"
+                    android:gravity="center_vertical"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textColor="#ffffff"
+                    android:text=" 최신 장학금 지원"
+                    android:textSize="20dip"/>
+
+                <ListView
+                    android:id="@+id/first_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="112dp"
+                    >
+                </ListView>
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/second_layout"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@+id/flipper_layout"
-                android:orientation="vertical"
-
-                >
+                android:layout_below="@+id/first_layout"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/today_textview"
+
+                    android:scaleType="center"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
@@ -142,30 +173,25 @@
                     android:shadowDy="0"
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
-                    android:textSize="20dip"
-                    android:text=" 최신 장학금 지원"
-                    />
+                    android:textStyle="normal"
+                    android:text=" 커뮤니티 인기글"
+                    android:textSize="20dip"/>
 
                 <ListView
                     android:id="@+id/second_listview"
                     android:layout_width="fill_parent"
-                    android:layout_height="250dp"
-                    >
+                    android:layout_height="260dp">
                 </ListView>
-
             </LinearLayout>
 
-<!-- <LinearLayout
-                android:id="@+id/second_layout"
+            <LinearLayout
+                android:id="@+id/third_layout"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_below="@+id/flipper_layout"
-                android:orientation="vertical"
-
-                >
+                android:layout_height="match_parent"
+                android:layout_below="@+id/second_layout"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/today_textview"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
@@ -175,24 +201,121 @@
                     android:shadowDy="0"
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
-                    android:textSize="20dip"
-                    android:text=" 커뮤니티 인기 글"
-                    android:text=" 장학금 정보"
+                    android:textStyle="normal"
+                    android:textSize="20dp"
+                    android:text=" 팀원구합니다!"
                     />
 
                 <ListView
-                    android:id="@+id/second_listview"
+                    android:id="@+id/third_listview"
                     android:layout_width="fill_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="200dp"
+                    android:fillViewport="true"
                     >
                 </ListView>
 
             </LinearLayout>
-            -->
+
+            <LinearLayout
+                android:id="@+id/fourth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/third_layout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/title_t"
+                    android:gravity="center_vertical"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textColor="#ffffff"
+                    android:textStyle="normal"
+                    android:textSize="20dp"
+                    android:text=" 팀원구합니다!"
+                    />
+
+                <ListView
+                    android:id="@+id/fourth_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:fillViewport="true"
+                    >
+                </ListView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/fifth_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/fourth_layout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/title_t"
+                    android:gravity="center_vertical"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textColor="#ffffff"
+                    android:textStyle="normal"
+                    android:textSize="20dp"
+                    android:text=" 팀원구합니다!"
+                    />
+
+                <ListView
+                    android:id="@+id/fifth_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:fillViewport="true"
+                    >
+                </ListView>
+
+            </LinearLayout>
 
 
+            <!--
 
-        </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_below="@+id/flipper_layout"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/title_t"
+                                android:gravity="center_vertical"
+                                android:shadowColor="#A8A8A8"
+                                android:shadowDx="0"
+                                android:shadowDy="0"
+                                android:shadowRadius="5"
+                                android:textColor="#ffffff"
+                                android:textSize="20dip"
+                                android:text=" 최신 장학금 지원"
+                                />
+
+                            <ListView
+                                android:layout_width="fill_parent"
+                                android:layout_height="260dp"
+                                >
+                            </ListView>
+
+
+                        </LinearLayout>
+                        -->
+            </RelativeLayout>
+
     </ScrollView>
 
 </LinearLayout>

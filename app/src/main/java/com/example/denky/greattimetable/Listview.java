@@ -14,9 +14,7 @@ public class Listview {
     public String getName(){
         return name;
     }
-    public String getContext(){
-        return context;
-    }
+    public String getContext(){ return context;}
     public Listview(String name, String title, String context){
         //this.icon=icon;
         this.name=name;
