@@ -144,6 +144,7 @@
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
                     android:textSize="20dip"
+<<<<<<< HEAD
                     android:text=" 최신 장학금 지원"
                     />
 

@@ -114,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickedHomepage(View v){
+<<<<<<< HEAD
+=======
+        Intent openHomepage=new Intent(Intent.ACTION_VIEW, Uri.parse("http://cse.konkuk.ac.kr"));
+        startActivity(openHomepage);
+>>>>>>> 컴공/add_MyPage_and_See_appInfo_function
     }
 
 

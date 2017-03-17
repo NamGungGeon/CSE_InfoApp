@@ -26,4 +26,17 @@ public class MypageActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< HEAD
+=======
+    public void clickedBackBtn(View v){
+        finish();
+    }
+
+    public void clickedPermissionPushAlarmCb(View v){
+        CheckBox cb=(CheckBox)findViewById(R.id.permissonPushAlarm);
+        isOkPushAlarm=cb.isChecked();
+    }
+
+
+>>>>>>> 컴공/add_MyPage_and_See_appInfo_function
 }
