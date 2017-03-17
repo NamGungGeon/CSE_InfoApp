@@ -7,14 +7,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-<<<<<<< HEAD
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.List;
-=======
 import android.view.View;
->>>>>>> 49f7e629154358fa9e6fe1b40c7a35fb098428be
 
 /**
  * Created by denky on 2017-03-05.
@@ -61,11 +57,15 @@ public class MainActivity extends AppCompatActivity {
         //ViewPager에 Adapter 설정
 
         ArrayList<Listview> data=new ArrayList<>();
-        Listview lion=new Listview("김아무개","클릭하세용", " 안녕하세요.");
-        data.add(lion);
+        Listview l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
+        Listview l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
+        Listview l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+
+        data.add(l1);
+        data.add(l2);
+        data.add(l3);
         ListviewAdapter adapter2=new ListviewAdapter(this,R.layout.list_item,data);
         listview.setAdapter(adapter2);
-
 
         pager.setAdapter(adapter);
         handler = new Handler() {

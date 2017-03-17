@@ -26,7 +26,9 @@ public class ListviewAdapter extends BaseAdapter {
     @Override
     public int getCount(){return data.size();}
     @Override
-    public String getItem(int position){return data.get(position).getName();}
+    public String getItem(int position){
+        return data.get(position).getName();
+    }
     @Override
     public long getItemId(int position){return position;}
 
@@ -41,6 +43,9 @@ public class ListviewAdapter extends BaseAdapter {
        // icon.setImageResource(listviewitem.getIcon());
         TextView name=(TextView)convertView.findViewById(R.id.list_text);
         name.setText(listviewitem.getName());
+        TextView title=(TextView)convertView.findViewById(R.id.list_context);
+        title.setText(listviewitem.getContext());
+
         return convertView;
     }
 }
