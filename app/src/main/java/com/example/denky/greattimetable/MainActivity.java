@@ -2,13 +2,27 @@ package com.example.denky.greattimetable;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> MyRepository/master
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.view.View;
+=======
+<<<<<<< HEAD
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+=======
+import android.view.View;
+>>>>>>> 49f7e629154358fa9e6fe1b40c7a35fb098428be
+>>>>>>> MyRepository/master
 
 /**
  * Created by denky on 2017-03-05.
@@ -42,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         Img = new Bitmap[maxScroll];
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView listview = (ListView)findViewById(R.id.second_listview);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
         /******************포스터 Bitmap 가공******************
@@ -52,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         adapter.getImg(maxScroll, Img); // 가공된 비트맵 전달
         /******************포스터 Bitmap 가공******************/
         //ViewPager에 Adapter 설정
+
+        ArrayList<Listview> data=new ArrayList<>();
+        Listview lion=new Listview("김아무개","클릭하세용", " 안녕하세요.");
+        data.add(lion);
+        ListviewAdapter adapter2=new ListviewAdapter(this,R.layout.list_item,data);
+        listview.setAdapter(adapter2);
+
+
         pager.setAdapter(adapter);
         handler = new Handler() {
 
@@ -99,8 +122,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickedHomepage(View v){
+<<<<<<< HEAD
         Intent openHomepage=new Intent(Intent.ACTION_VIEW, Uri.parse("http://cse.konkuk.ac.kr"));
         startActivity(openHomepage);
+=======
+>>>>>>> MyRepository/master
     }
 
 
