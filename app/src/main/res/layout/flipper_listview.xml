@@ -11,9 +11,6 @@
         android:scaleType="centerCrop"
         android:background="#BBBBBB"
         />
-
-
-    // 메인화면 추천분양상품 배치 그림 + 제목 + 설명//
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="35dip"

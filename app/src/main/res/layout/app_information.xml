@@ -20,13 +20,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/developerInfo"
         android:layout_margin="7dp"/>
-<<<<<<< HEAD
-=======
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" "
         android:layout_marginTop="7dp"/>
->>>>>>> 컴공/add_MyPage_and_See_appInfo_function
 
 </LinearLayout>
