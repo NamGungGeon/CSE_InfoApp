@@ -21,7 +21,6 @@
 
         <activity android:name="com.example.denky.greattimetable.AppInformation"
             android:theme="@style/Theme.AppCompat.Dialog"></activity>
-            <!--android:theme="@style/Theme.AppCompat.Dialog"-->
 
     </application>
 

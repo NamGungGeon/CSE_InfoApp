@@ -13,13 +13,14 @@ import android.widget.TextView;
  */
 
 public class MypageActivity extends AppCompatActivity {
-    //Push alarm permission, init value is false.
-    static boolean isOkPushAlarm=false;
-
+    //Push alarm permission, init value is true.
+    static boolean isOkPushAlarm=true;
+    CheckBox cb;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_mypage);
+        cb=(CheckBox)findViewById(R.id.permissonPushAlarm);
 
         TextView appInfo=(TextView)findViewById(R.id.appinfo);
         appInfo.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +37,6 @@ public class MypageActivity extends AppCompatActivity {
     }
 
     public void clickedPermissionPushAlarmCb(View v){
-        CheckBox cb=(CheckBox)findViewById(R.id.permissonPushAlarm);
         isOkPushAlarm=cb.isChecked();
     }
 

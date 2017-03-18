@@ -7,11 +7,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
-import java.util.ArrayList;
-
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by denky on 2017-03-15.
@@ -184,7 +185,18 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+    }
 
+    //뒤로가기 버튼을 두번 연속으로 눌러야 종료되게끔 하는 메소드
+    private long time= 0;
+    @Override
+    public void onBackPressed(){
+        if(System.currentTimeMillis()-time>=1500){
+            time=System.currentTimeMillis();
+            Toast.makeText(getApplicationContext(),"뒤로 버튼을 한번 더 누르면 종료합니다.",Toast.LENGTH_SHORT).show();
+        }else if(System.currentTimeMillis()-time<1500){
+            finish();
+        }
     }
 
 
