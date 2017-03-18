@@ -29,7 +29,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:text="건국대학교 컴퓨터공학과"
-                android:textSize = "23dp"
+                android:textSize = "20dp"
                 android:textAlignment="center"
 
                 />
@@ -48,6 +48,7 @@
             android:layout_gravity="center"
             >
             <Button
+                android:id="@+id/contest_btn"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="공모전"
