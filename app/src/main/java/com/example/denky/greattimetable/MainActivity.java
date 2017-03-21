@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -34,6 +33,10 @@ import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    String univ=null;
+    String major=null;
+
     ViewPager pager;
     Thread thread = null;
     Handler handler = null;

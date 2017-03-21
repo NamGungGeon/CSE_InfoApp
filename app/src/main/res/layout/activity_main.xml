@@ -281,6 +281,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Computer Science Engineering"
+                    android:textColor="#66000000"
                     android:textSize="15dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="5dp"

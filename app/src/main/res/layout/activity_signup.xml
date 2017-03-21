@@ -28,21 +28,33 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
                 />
-            <EditText
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:hint="아이디"
-                android:layout_gravity="center"
-                android:padding="10dp"
+            <RelativeLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/idText"
-                android:drawableStart="@drawable/profile"
-                android:drawableLeft="@drawable/profile"
-                android:drawablePadding="10dp"
-                android:background="@color/colorPrimary"
-                />
+                android:layout_gravity="center">
+                <EditText
+                    android:layout_width = "220dp"
+                    android:layout_height = "wrap_content"
+                    android:padding="10dp"
+                    android:hint="아이디"
+                    android:layout_gravity="center"
+                    android:textColor = "#000000"
+                    android:textColorHint="#A9A9A9"
+                    android:id="@+id/idText"
+                    android:drawableStart="@drawable/profile"
+                    android:drawableLeft="@drawable/profile"
+                    android:drawablePadding="10dp"
+                    android:background="@color/colorPrimary"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:onClick="clickedIdCheckBtn"
+                    android:background="@drawable/check_symbol"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
             <EditText
                 android:inputType="textPassword"
                 android:layout_width = "280dp"
@@ -59,6 +71,22 @@
                 android:background="@color/colorPrimary"
                 android:drawablePadding="10dp"
                 />
+
+            <EditText
+                android:layout_width = "280dp"
+                android:layout_height = "wrap_content"
+                android:hint="비밀번호 확인"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor = "#000000"
+                android:textColorHint="#A9A9A9"
+                android:id="@+id/check_password"
+                android:drawableStart="@drawable/pass"
+                android:drawableLeft="@drawable/pass"
+                android:drawablePadding="10dp"
+                android:background="@color/colorPrimary"
+                />
             <EditText
                 android:layout_width = "280dp"
                 android:layout_height = "wrap_content"
@@ -74,10 +102,10 @@
                 android:drawablePadding="10dp"
                 android:background="@color/colorPrimary"
                 />
-            <EditText
+            <TextView
                 android:layout_width = "280dp"
                 android:layout_height = "wrap_content"
-                android:hint="학교"
+                android:text="학교 선택"
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
@@ -88,11 +116,12 @@
                 android:drawableLeft="@drawable/school"
                 android:drawablePadding="10dp"
                 android:background="@color/colorPrimary"
+                android:onClick="clickedUniv"
                 />
-            <EditText
+            <TextView
                 android:layout_width = "280dp"
                 android:layout_height = "wrap_content"
-                android:hint="학과"
+                android:text="학과 선택"
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
@@ -103,6 +132,7 @@
                 android:drawableLeft="@drawable/major"
                 android:drawablePadding="10dp"
                 android:background="@color/colorPrimary"
+                android:onClick="clickedMajor"
                 />
             <Button
                 android:id="@+id/signup_btn"
@@ -111,6 +141,7 @@
                 android:layout_marginTop="50dp"
                 android:text="가입하기"
                 android:layout_gravity="center"
+                android:onClick="clickedSignupBtn"
                 />
 
         </LinearLayout>
