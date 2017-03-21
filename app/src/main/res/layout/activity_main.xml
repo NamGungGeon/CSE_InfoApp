@@ -127,7 +127,7 @@
             <LinearLayout
                 android:id="@+id/first_layout"
                 android:layout_width="match_parent"
-                android:layout_height="152dp"
+                android:layout_height="260dp"
                 android:layout_below="@+id/flipper_layout"
                 android:orientation="vertical"
 
@@ -148,7 +148,7 @@
                 <ListView
                     android:id="@+id/first_listview"
                     android:layout_width="fill_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="220dp"
                     >
                 </ListView>
 
