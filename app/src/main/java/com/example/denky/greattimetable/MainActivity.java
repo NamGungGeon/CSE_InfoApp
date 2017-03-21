@@ -6,14 +6,15 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.MainThread;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -25,6 +26,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by denky on 2017-03-15.
@@ -40,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     int v=1;	//화면 전환 뱡향 1:left to right, 2:right to left
     int cur = 0;
     int maxScroll = 3; // 최대 CustomAdapter의 자료 수
-    phpDown task;
     /*
     static public Bitmap cropBitmap(Bitmap original) { // Bitmap의 세로를 절반으로 자름
         Bitmap result = Bitmap.createBitmap(original
@@ -56,55 +57,85 @@ public class MainActivity extends AppCompatActivity {
     */
     ArrayList<ListItem> listitem = new ArrayList<ListItem>();
     ListItem Item;
-    private class phpDown extends AsyncTask<String, Integer,String> {
 
-        @Override
-        protected String doInBackground(String... urls) {
-            StringBuilder jsonHtml = new StringBuilder();
-            try{
-                URL url = new URL(urls[0]);
-                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-                if(conn != null){
-                    conn.setConnectTimeout(10000);
-                    conn.setUseCaches(false);
-                    if(conn.getResponseCode() == HttpURLConnection.HTTP_OK){
-                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-                        for(;;){
-                            String line = br.readLine();
-                            if(line == null) break;
-                            jsonHtml.append(line + "\n");
-                        }
-                        br.close();
+    String myJSON;
+    ListView fifth_listview;
+    private static final String TAG_RESULTS="result";
+    private static final String TITLE = "title";
+    private static final String URL = "url";
+    private static final String UPDATER ="updater";
+
+    JSONArray peoples = null;
+
+    ArrayList<HashMap<String, String>> personList;
+
+    protected void showList(){
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            peoples = jsonObj.getJSONArray(TAG_RESULTS);
+
+            for(int i=0;i<peoples.length();i++){
+                JSONObject c = peoples.getJSONObject(i);
+                String temp_id = c.getString(TITLE);
+                String temp_name = c.getString(URL);
+                String temp_updater = c.getString(UPDATER);
+                HashMap<String,String> persons = new HashMap<String,String>();
+                persons.put(TITLE,temp_id);
+                persons.put(URL,temp_name);
+                persons.put(UPDATER,temp_updater);
+                personList.add(persons);
+
+            }
+
+            ListAdapter adapter = new SimpleAdapter(
+                    MainActivity.this, personList, R.layout.list_item,
+                    new String[]{TITLE,URL,UPDATER},
+                    new int[]{R.id.list_text, R.id.list_context}
+            );
+            fifth_listview.setAdapter(adapter);
+
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void getData(String url){
+        class GetDataJSON extends AsyncTask<String, Void, String>{
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                String uri = params[0];
+
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(uri);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    String json;
+                    while((json = bufferedReader.readLine())!= null){
+                        sb.append(json+"\n");
                     }
-                    conn.disconnect();
+                    return sb.toString().trim();
+
+                }catch(Exception e){
+                    return null;
                 }
-            } catch(Exception ex){
-                ex.printStackTrace();
             }
-            return jsonHtml.toString();
-        }
 
-        protected void onPostExecute(String str){
-            String url,updater, view;
-
-            try{
-                JSONObject root = new JSONObject(str);
-                JSONArray ja = root.getJSONArray("results");
-
-                for(int i=0;i<ja.length();i++){
-                    JSONObject jo = ja.getJSONObject(i);
-                    url = jo.getString("url");
-                    updater = jo.getString("updater");
-                    view = jo.getString("view");
-                    listitem.add(new ListItem(url, updater, view));
-                }
-            }catch (JSONException e){
-                e.printStackTrace();
+            @Override
+            protected void onPostExecute(String result){
+                myJSON=result;
+                showList();
             }
-            //  txtView.setText("id : "+listitem.get(0).getData(0));
-            Log.d("result : ", listitem.get(0).getData(0));
         }
-
+        GetDataJSON g = new GetDataJSON();
+        g.execute(url);
     }
 
 
@@ -116,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         ListView second_listview = (ListView)findViewById(R.id.second_listview);
         ListView third_listview = (ListView)findViewById(R.id.third_listview);
         ListView fourth_listview = (ListView)findViewById(R.id.fourth_listview);
-        ListView fifth_listview = (ListView)findViewById(R.id.fifth_listview);
+        fifth_listview = (ListView)findViewById(R.id.fifth_listview);
         Button contest_btn = (Button)findViewById(R.id.contest_btn);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
@@ -153,13 +184,13 @@ public class MainActivity extends AppCompatActivity {
         //카테고리 소스 : 2
         //카테고리 소스 : 2
         ArrayList<Listview> category2_data=new ArrayList<>();
-        Listview category2_l1=new Listview("국가장학재단","클릭하세용", "국가장학금1");
-        Listview category2_l2=new Listview("국가장학재단","클릭하세용2", "국가장학금2");
-        Listview category2_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
+        Listview category2_l1=new Listview("건대파워코더","", "닭그네 탄핵됌ㅅㄱ링");
+        Listview category2_l2=new Listview("코딩장인","클릭하세용2", "하루500줄코딩미만잡");
+       // Listview category2_l3=new Listview("국가장학재단","클릭하세용3", "국가우수장학금(이공계)");
 
         category2_data.add(category2_l1);
         category2_data.add(category2_l2);
-        category2_data.add(category2_l3);
+        //category2_data.add(category2_l3);
         ListviewAdapter category2_adapter=new ListviewAdapter(this,R.layout.list_item,category2_data , 2);
         second_listview.setAdapter(category2_adapter);
         //카테고리 소스 : 2
@@ -189,34 +220,13 @@ public class MainActivity extends AppCompatActivity {
         ListviewAdapter category4_adapter=new ListviewAdapter(this,R.layout.list_item,category4_data, 4);
         fourth_listview.setAdapter(category4_adapter);
         //카테고리 소스 : 4
-
-
+        personList = new ArrayList<HashMap<String,String>>();
         //카테고리 소스 : 5  - 추천 사이트 ----- //
+        getData("http://denkybrain.cafe24.com/cse/recommend_site2.php");
 
 
-       // task = new phpDown();
-       // task.execute("http://denkybrain.cafe24.com/cse/recommend_site.php");
-
-        //  String temp_array[][] = task.getItem1();
-        /*
-        ArrayList<Listview> category5_data = new ArrayList<>();
-        try {
-            Listview category5_l1 = new Listview(temp_array[0][0], temp_array[0][1], temp_array[0][3]);
-            category5_data.add(category5_l1);
-        } catch (Exception e){}
-        try {
-            Listview category5_l2 = new Listview(temp_array[1][0], temp_array[1][1], temp_array[1][3]);
-            category5_data.add(category5_l2);
-        } catch (Exception e){}
-        try {
-            Listview category5_l3=new Listview(temp_array[2][0],temp_array[2][1], temp_array[2][3]);
-            category5_data.add(category5_l3);
-        } catch (Exception e){}
-
-        ListviewAdapter category5_adapter=new ListviewAdapter(this,R.layout.list_item,category5_data, 5);
-        fifth_listview.setAdapter(category5_adapter);
         //카테고리 소스 : 5
-*/
+
         pager.setAdapter(adapter);
         handler = new Handler() {
 
@@ -288,7 +298,4 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-
-
-
 }
