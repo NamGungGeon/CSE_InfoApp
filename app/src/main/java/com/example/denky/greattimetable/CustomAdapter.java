@@ -19,7 +19,6 @@ public class CustomAdapter extends PagerAdapter {
     public CustomAdapter(LayoutInflater inflater) {
         // TODO Auto-generated constructor stub
         this.inflater=inflater;
-
     }
 
     //PagerAdapter가 가지고 잇는 View의 개수를 리턴
@@ -71,11 +70,9 @@ public class CustomAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         // TODO Auto-generated method stub
-
         //ViewPager에서 보이지 않는 View는 제거
         //세번째 파라미터가 View 객체 이지만 데이터 타입이 Object여서 형변환 실시
         container.removeView((View)object);
-
     }
 
     //instantiateItem() 메소드에서 리턴된 Ojbect가 View가  맞는지 확인하는 메소드

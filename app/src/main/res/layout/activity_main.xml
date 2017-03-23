@@ -57,9 +57,10 @@
                 android:textColor="@color/black_gray"
                 />
             <Button
+                android:id="@+id/board_list_btn"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:text="커뮤니티"
+                android:text="게시판"
                 android:textSize="20dp"
                 android:background="#FFFFFF"
                 android:textColor="@color/black_gray"

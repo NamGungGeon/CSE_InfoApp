@@ -34,20 +34,22 @@ public class ListviewAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position){return position;}
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = inflater.inflate(layout, parent, false);
         }
-                Listview listviewitem = data.get(position);
-                TextView name = (TextView) convertView.findViewById(R.id.list_text);
-                name.setText(listviewitem.getName());
-                TextView title = (TextView) convertView.findViewById(R.id.list_context);
-                title.setText(listviewitem.getContext());
-
-
-
+        if(index !=10) {
+            Listview listviewitem = data.get(position);
+            TextView name = (TextView) convertView.findViewById(R.id.list_text);
+            name.setText(listviewitem.getName());
+            TextView title = (TextView) convertView.findViewById(R.id.list_context);
+            title.setText(listviewitem.getContext());
+        }else{
+            Listview listviewitem = data.get(position);
+            TextView name = (TextView) convertView.findViewById(R.id.list_text);
+            name.setText(listviewitem.getName());
+        }
         return convertView;
 
     }

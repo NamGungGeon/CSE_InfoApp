@@ -22,6 +22,8 @@
 
         <activity android:name="com.example.denky.greattimetable.AppInformation"
             android:theme="@style/Theme.AppCompat.Dialog"></activity>
+        <activity android:name=".BoardListActivity"></activity>
+
 
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

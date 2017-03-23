@@ -34,14 +34,12 @@ public class phpDown {
     private static final String CONTEXT ="context";
     ArrayList<HashMap<String, String>> personList;
 
-
     JSONArray recommend_sites = null;
     public phpDown (int type, ListView listview, Activity activity) {
         this.type = type; // 순서대로 1카테고리 = type 1, 5카테고리 = type 5
         this.listview = listview;
         this.activity = activity;
         personList = new ArrayList<HashMap<String,String>>();
-
        // Log.d("php_result", "type :"+this.type + "\nlistview : "+this.listview +"\nactivity : "+this.activity);
     }
 

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     Thread thread = null;
     Handler handler = null;
-    Button contest_btn;
+    Button contest_btn, board_list_btn;
     int p=0;	//페이지번호
     int v=1;	//화면 전환 뱡향 1:left to right, 2:right to left
     int cur = 0;
@@ -76,8 +76,17 @@ public class MainActivity extends AppCompatActivity {
         fourth_listview = (ListView)findViewById(R.id.fourth_listview);
         fifth_listview = (ListView)findViewById(R.id.fifth_listview);
         Button contest_btn = (Button)findViewById(R.id.contest_btn);
+        Button board_list_btn = (Button)findViewById(R.id.board_list_btn);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
+
+        board_list_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, BoardListActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         contest_btn.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
 
         pager.setAdapter(adapter);
         handler = new Handler() {
-
             public void handleMessage(Message msg) { // 여기서 이미지 스크롤
                 if (v == 1) { // 화면전환이 left to right
                     cur++;

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            >
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/profile"
+                android:layout_marginLeft="10dp"
+                android:onClick="clickedMypageBtn"
+                />
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="건국대학교 컴퓨터공학과"
+                android:textSize = "20dp"
+                android:textAlignment="center"
+
+                />
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/search"
+                android:layout_marginRight="10dp"
+                android:onClick="clickedHomepage"
+              />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+            <Button
+                android:id="@+id/contest_btn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="공모전"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/black_gray"
+                />
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="게시판"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/black_gray"
+                />
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="팀모집"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/black_gray"
+                />
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="추천 사이트"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:textColor="@color/black_gray"
+                />
+         </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:id="@+id/main_scrollView"
+        android:background="@android:color/white"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+        <!-- 여기부터 second category to 5th category-->
+
+            <LinearLayout
+                android:id="@+id/first_layout"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_below="@+id/flipper_layout"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/title_t"
+                    android:gravity="center_vertical"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:textColor="#ffffff"
+                    android:text=" 게시판 목록"
+                    android:textSize="20dip"/>
+
+                <ListView
+                    android:id="@+id/board_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="460dp"
+                    >
+                </ListView>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
