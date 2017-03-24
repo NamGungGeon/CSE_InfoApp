@@ -86,7 +86,11 @@ public class SignupActivity extends AppCompatActivity {
             }
         password=null;
 
-        //모든 조건을 통과하면 회원가입 완료
+        //모든 조건을 통과하면 회원가입 완료, POST형식으로 php에 데이터 전송
+        /*
+        phpUp p1 = new phpUp(String id, String password, String major, String nickname, String univ);
+        p1.HttpPostData();
+        */
         dialogFragment.setAlertText("회원가입 완료.");
         dialog=dialogFragment.onCreateDialog(bundle);
         dialog.show();

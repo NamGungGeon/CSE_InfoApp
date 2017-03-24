@@ -102,10 +102,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="320dp"
                 android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/title_t"
+                android:orientation="horizontal">
                 <TextView
                     android:id="@+id/recommend_textview"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
                     android:gravity="center_vertical"
@@ -116,7 +120,20 @@
                     android:textColor="#ffffff"
                     android:text=" 최신 공모전/대회"
                     android:textSize="20dip"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnify"
 
+                    />
+                </LinearLayout>
                 <android.support.v4.view.ViewPager
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
@@ -133,18 +150,39 @@
                 android:orientation="vertical"
 
                 >
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
-                    android:gravity="center_vertical"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:textColor="#ffffff"
-                    android:text=" 최신 장학금 지원"
-                    android:textSize="20dip"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:shadowColor="#A8A8A8"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="5"
+                        android:textColor="#ffffff"
+                        android:text=" 최신 장학금 지원"
+                        android:textSize="20dip"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        ></View>
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/magnify"
+
+                         />
+
+                </LinearLayout>
+
 
                 <ListView
                     android:id="@+id/first_listview"
@@ -162,11 +200,16 @@
                 android:layout_height="300dp"
                 android:layout_below="@+id/first_layout"
                 android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/title_t"
+                android:orientation="horizontal">
 
                 <TextView
 
                     android:scaleType="center"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
                     android:gravity="center_vertical"
@@ -179,6 +222,20 @@
                     android:text=" 커뮤니티 인기글"
                     android:textSize="20dip"/>
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></View>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnify"
+
+                    />
+                </LinearLayout>
                 <ListView
                     android:id="@+id/second_listview"
                     android:layout_width="fill_parent"
@@ -192,9 +249,13 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/second_layout"
                 android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/title_t"
+                android:orientation="horizontal">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
                     android:gravity="center_vertical"
@@ -208,6 +269,20 @@
                     android:text=" 팀원구합니다!"
                     />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></View>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnify"
+
+                    />
+                </LinearLayout>
                 <ListView
                     android:id="@+id/third_listview"
                     android:layout_width="fill_parent"
@@ -224,9 +299,14 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/third_layout"
                 android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/title_t"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
                     android:gravity="center_vertical"
@@ -239,7 +319,20 @@
                     android:textSize="20dp"
                     android:text=" 중고장터"
                     />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></View>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnify"
 
+                    />
+                </LinearLayout>
                 <ListView
                     android:id="@+id/fourth_listview"
                     android:layout_width="fill_parent"
@@ -255,9 +348,13 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/fourth_layout"
                 android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/title_t"
+                android:orientation="horizontal">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:background="@drawable/title_t"
                     android:gravity="center_vertical"
@@ -270,7 +367,20 @@
                     android:textSize="20dp"
                     android:text=" 추천 사이트"
                     />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></View>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnify"
 
+                    />
+                </LinearLayout>
                 <ListView
                     android:id="@+id/fifth_listview"
                     android:layout_width="fill_parent"

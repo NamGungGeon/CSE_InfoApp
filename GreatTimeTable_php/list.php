@@ -16,7 +16,7 @@ if ($src_value != '') {
     $where = "where $src_name like '%$src_value%'";
 }
 
-// 데이터베이스에서 페이지의 첫번째 글($no)부터 
+// 데이터베이스에서 페이지의 첫번째 글($no)부터
 // $page_size 만큼의 글을 가져온다.
 mysql_query("set session character_set_connection=utf8;");
 mysql_query("set session character_set_results=utf8;");
@@ -29,10 +29,10 @@ $result_row=mysql_fetch_row($result_count);
 $total_row = $result_row[0];
 
 //결과의 첫번째 열이 count(*) 의 결과다.
-//mysql_fetch_row 쓰면 $result_row[0] 처럼 숫자를 써서 접근을 해야한다. 
+//mysql_fetch_row 쓰면 $result_row[0] 처럼 숫자를 써서 접근을 해야한다.
 
 # 총 페이지 계산
-# ceil는 올림이다. 
+# ceil는 올림이다.
 if ($total_row <= 0) $total_row = 0;
 $total_page = ceil($total_row / $page_size);//1개면
 
@@ -164,9 +164,9 @@ for ($i=$start_page;$i <= $end_page;$i++) {
     if ($no!=$page){ //현재 페이지가 아닐 경우만 링크를 표시
         echo "<a href='$PHP_SELF?no=$page'>";
     }
-    
+
     echo " $i "; //페이지를 표시
-    
+
     if ($no!=$page){ //현재 페이지가 아닐 경우만 링크를 표시하기 위해서
         echo "</a>";
     }

@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
     ListView third_listview;
     ListView fourth_listview;
     ListView fifth_listview;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         // ScrollView main_scrollview = (ScrollView) findViewById(R.id.main_scrollView);//스크롤뷰 선언
         super.onCreate(savedInstanceState);
