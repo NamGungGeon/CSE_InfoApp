@@ -19,6 +19,7 @@
         <activity android:name=".MypageActivity"></activity>
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".ContestActivity"></activity>
+        <activity android:name=".BoardSiteListActivity"></activity>
 
         <activity android:name="com.example.denky.greattimetable.AppInformation"
             android:theme="@style/Theme.AppCompat.Dialog"></activity>

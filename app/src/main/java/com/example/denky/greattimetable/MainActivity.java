@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     Thread thread = null;
     Handler handler = null;
-    Button contest_btn, board_list_btn;
+    Button contest_btn, board_list_btn, board_site_btn;
     int p=0;	//페이지번호
     int v=1;	//화면 전환 뱡향 1:left to right, 2:right to left
     int cur = 0;
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         fifth_listview = (ListView)findViewById(R.id.fifth_listview);
         Button contest_btn = (Button)findViewById(R.id.contest_btn);
         Button board_list_btn = (Button)findViewById(R.id.board_list_btn);
+        Button board_site_btn = (Button)findViewById(R.id.site_btn);
         pager = (ViewPager) findViewById(R.id.pager);
         CustomAdapter adapter = new CustomAdapter(getLayoutInflater());
 
@@ -86,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, BoardListActivity.class);
+                startActivity(i);
+            }
+        });
+        board_site_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, BoardSiteListActivity.class);
                 startActivity(i);
             }
         });
@@ -98,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
 
         phpDown php1 = new phpDown(1, first_listview, MainActivity.this);
         php1.getData("http://denkybrain.cafe24.com/cse/scholarship.php");

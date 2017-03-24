@@ -91,6 +91,7 @@ public class SignupActivity extends AppCompatActivity {
         phpUp p1 = new phpUp(String id, String password, String major, String nickname, String univ);
         p1.HttpPostData();
         */
+
         dialogFragment.setAlertText("회원가입 완료.");
         dialog=dialogFragment.onCreateDialog(bundle);
         dialog.show();

@@ -99,6 +99,14 @@ public class phpDown {
                 );
                     listview.setAdapter(adapter5);
                     break;
+                case 6 :
+                    ListAdapter adapter6 = new SimpleAdapter( //default_adapter
+                            activity, personList, R.layout.list_litem_site_board,
+                            new String[]{TITLE, URL},
+                            new int[]{R.id.list_text, R.id.list_context}
+                    );
+                    listview.setAdapter(adapter6);
+                    break;
 
                 default :
                     break;

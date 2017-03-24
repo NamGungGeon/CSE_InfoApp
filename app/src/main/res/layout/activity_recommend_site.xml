@@ -118,11 +118,11 @@
                     android:shadowDy="0"
                     android:shadowRadius="5"
                     android:textColor="#ffffff"
-                    android:text=" 게시판 목록"
+                    android:text=" 추천 사이트"
                     android:textSize="20dip"/>
 
                 <ListView
-                    android:id="@+id/board_listview"
+                    android:id="@+id/board_site_listview"
                     android:layout_width="fill_parent"
                     android:layout_height="460dp"
                     >
