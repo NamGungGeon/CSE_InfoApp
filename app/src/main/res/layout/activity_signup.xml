@@ -5,146 +5,182 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.denky.greattimetable.LoginActivity">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:textSize = "23dp"
-                android:text="회원가입"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                />
-            <RelativeLayout
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center">
-                <EditText
-                    android:layout_width = "220dp"
-                    android:layout_height = "wrap_content"
-                    android:padding="10dp"
-                    android:hint="아이디"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:textSize = "23dp"
+                    android:text="회원가입"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    />
+                <RelativeLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center">
+                    <EditText
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:padding="10dp"
+                        android:hint="아이디"
+                        android:layout_gravity="center"
+                        android:textColor = "#000000"
+                        android:textColorHint="#A9A9A9"
+                        android:id="@+id/idText"
+                        android:drawableStart="@drawable/profile"
+                        android:drawableLeft="@drawable/profile"
+                        android:drawablePadding="10dp"
+                        android:background="@color/colorPrimary"
+                        />
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="15dp"
+                        android:onClick="clickedIdCheckBtn"
+                        android:id="@+id/checkIdBt"
+                        android:background="@drawable/check_symbol"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <EditText
+                    android:inputType="textPassword"
+                    android:layout_width = "280dp"
+                    android:layout_height = "wrap_content"
+                    android:hint="패스워드"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
                     android:textColor = "#000000"
                     android:textColorHint="#A9A9A9"
-                    android:id="@+id/idText"
-                    android:drawableStart="@drawable/profile"
-                    android:drawableLeft="@drawable/profile"
+                    android:id="@+id/passwordText"
+                    android:drawableStart="@drawable/pass"
+                    android:drawableLeft="@drawable/pass"
+                    android:background="@color/colorPrimary"
+                    android:drawablePadding="10dp"
+                    />
+
+                <EditText
+                    android:layout_width = "280dp"
+                    android:layout_height = "wrap_content"
+                    android:hint="비밀번호 확인"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor = "#000000"
+                    android:textColorHint="#A9A9A9"
+                    android:id="@+id/check_password"
+                    android:drawableStart="@drawable/pass"
+                    android:drawableLeft="@drawable/pass"
                     android:drawablePadding="10dp"
                     android:background="@color/colorPrimary"
                     />
+                <RelativeLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center">
+                    <EditText
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:padding="10dp"
+                        android:hint="닉네임"
+                        android:layout_gravity="center"
+                        android:textColor = "#000000"
+                        android:textColorHint="#A9A9A9"
+                        android:id="@+id/nickname"
+                        android:drawableStart="@drawable/profile"
+                        android:drawableLeft="@drawable/profile"
+                        android:drawablePadding="10dp"
+                        android:background="@color/colorPrimary"
+                        />
 
-                <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:onClick="clickedIdCheckBtn"
-                    android:background="@drawable/check_symbol"
-                    android:layout_alignParentRight="true"/>
-            </RelativeLayout>
-            <EditText
-                android:inputType="textPassword"
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:hint="패스워드"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/passwordText"
-                android:drawableStart="@drawable/pass"
-                android:drawableLeft="@drawable/pass"
-                android:background="@color/colorPrimary"
-                android:drawablePadding="10dp"
-                />
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="15dp"
+                        android:onClick="clickedNicknameCheckBtn"
+                        android:background="@drawable/check_symbol"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/checkNicknameBt"/>
+                </RelativeLayout>
+                <EditText
+                    android:layout_width = "280dp"
+                    android:layout_height = "wrap_content"
+                    android:hint="이메일"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor = "#000000"
+                    android:textColorHint="#A9A9A9"
+                    android:id="@+id/emailText"
+                    android:drawableStart="@drawable/email"
+                    android:drawableLeft="@drawable/email"
+                    android:drawablePadding="10dp"
+                    android:background="@color/colorPrimary"
+                    />
+                <TextView
+                    android:layout_width = "280dp"
+                    android:layout_height = "wrap_content"
+                    android:text="학교 선택"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor = "#000000"
+                    android:textColorHint="#A9A9A9"
+                    android:id="@+id/univ"
+                    android:drawableStart="@drawable/school"
+                    android:drawableLeft="@drawable/school"
+                    android:drawablePadding="10dp"
+                    android:background="@color/colorPrimary"
+                    android:onClick="clickedUniv"
+                    />
+                <TextView
+                    android:layout_width = "280dp"
+                    android:layout_height = "wrap_content"
+                    android:text="학과 선택"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor = "#000000"
+                    android:textColorHint="#A9A9A9"
+                    android:id="@+id/major"
+                    android:drawableStart="@drawable/major"
+                    android:drawableLeft="@drawable/major"
+                    android:drawablePadding="10dp"
+                    android:background="@color/colorPrimary"
+                    android:onClick="clickedMajor"
+                    />
+                <Button
+                    android:id="@+id/signup_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="가입하기"
+                    android:layout_gravity="center"
+                    android:onClick="clickedSignupBtn"
+                    />
 
-            <EditText
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:hint="비밀번호 확인"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/check_password"
-                android:drawableStart="@drawable/pass"
-                android:drawableLeft="@drawable/pass"
-                android:drawablePadding="10dp"
-                android:background="@color/colorPrimary"
-                />
-            <EditText
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:hint="이메일"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/emailText"
-                android:drawableStart="@drawable/email"
-                android:drawableLeft="@drawable/email"
-                android:drawablePadding="10dp"
-                android:background="@color/colorPrimary"
-                />
-            <TextView
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:text="학교 선택"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/school"
-                android:drawableStart="@drawable/school"
-                android:drawableLeft="@drawable/school"
-                android:drawablePadding="10dp"
-                android:background="@color/colorPrimary"
-                android:onClick="clickedUniv"
-                />
-            <TextView
-                android:layout_width = "280dp"
-                android:layout_height = "wrap_content"
-                android:text="학과 선택"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:textColor = "#000000"
-                android:textColorHint="#A9A9A9"
-                android:id="@+id/major"
-                android:drawableStart="@drawable/major"
-                android:drawableLeft="@drawable/major"
-                android:drawablePadding="10dp"
-                android:background="@color/colorPrimary"
-                android:onClick="clickedMajor"
-                />
-            <Button
-                android:id="@+id/signup_btn"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="가입하기"
-                android:layout_gravity="center"
-                android:onClick="clickedSignupBtn"
-                />
+            </LinearLayout>
 
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
 </RelativeLayout>

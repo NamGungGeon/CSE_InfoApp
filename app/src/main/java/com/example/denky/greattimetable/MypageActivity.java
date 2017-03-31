@@ -13,14 +13,15 @@ import android.widget.TextView;
  */
 
 public class MypageActivity extends AppCompatActivity {
-    //Push alarm permission, init value is true.
-    static boolean isOkPushAlarm=true;
-    CheckBox cb;
+    CheckBox pushAlarmCb;
+    CheckBox autoLoginCb;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_mypage);
-        cb=(CheckBox)findViewById(R.id.permissonPushAlarm);
+        pushAlarmCb=(CheckBox)findViewById(R.id.permissonPushAlarm);
+        autoLoginCb=(CheckBox)findViewById(R.id.autologin);
+
 
         TextView appInfo=(TextView)findViewById(R.id.appinfo);
         appInfo.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +38,11 @@ public class MypageActivity extends AppCompatActivity {
     }
 
     public void clickedPermissionPushAlarmCb(View v){
-        isOkPushAlarm=cb.isChecked();
+        Settings.isPushOk=pushAlarmCb.isChecked();
     }
 
+    public void clickedAutoLoginCb(View v){
+        Settings.autoLogin=autoLoginCb.isChecked();
+    }
 
 }

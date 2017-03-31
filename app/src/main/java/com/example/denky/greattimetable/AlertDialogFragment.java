@@ -19,7 +19,6 @@ public class AlertDialogFragment extends DialogFragment {
     public void setAlertText(String alertText){
         this.alertText=alertText;
     }
-
     public void setActivity(Activity activity){
         this.activity=activity;
     }
