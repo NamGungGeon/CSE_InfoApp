@@ -139,10 +139,10 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         //모든 조건을 통과하면 회원가입 완료, POST형식으로 php에 데이터 전송
-        /*
-        phpUp p1 = new phpUp(id, password, major, nickname, univ);
-        p1.HttpPostData();
-        */
+
+        phpUp p1 = new phpUp(id, password, selectedMajor, nickname, selectedUniv);
+        p1.HttpPostData("http://denkybrain.cafe24.com/cse/signup.php");
+
 
         dialogFragment.setAlertText("회원가입 완료.");
         dialog=dialogFragment.onCreateDialog(bundle);

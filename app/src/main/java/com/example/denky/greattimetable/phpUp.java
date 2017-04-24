@@ -24,12 +24,12 @@ public class phpUp {
         this.nickname = nickname;
         this.univ = univ;
     }
-    public void HttpPostData() {
+    public void HttpPostData(String SIGNUP) {
         try {
             //--------------------------
             //   URL 설정하고 접속하기
             //--------------------------
-            final String SIGNUP = "http://denkybrain.cafe24.com/cse/signup.php";
+            //final String SIGNUP = "http://denkybrain.cafe24.com/cse/signup.php";
             URL url = new URL(SIGNUP);       // URL 설정
             HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
             //--------------------------
